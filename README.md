@@ -57,22 +57,22 @@ The following program demonstrates the use of the ASCIIEncoding.GetBytes method.
 
 import SynPSG.Text.Encoding
 
-main
-record
-byteArray ,[#]@Byte
-oldString ,string
-wrkByte ,@Byte
-endrecord
+main <br />
+  record <br />
+    byteArray ,[#]@Byte <br />
+    oldString ,string <br />
+    wrkByte ,@Byte <br />
+  endrecord <br />
 
-proc
-open(1,O,'TT:')
-oldString = "This is a test."
-writes(1,"Original String:")
-writes(1,%atrim(oldString))
-writes(1,"")
-byteArray = ASCIIEncoding.GetBytes(oldString)
-writes(1,"Characters in original string: "+%string(byteArray.Length,'ZZX'))
-writes(1,"Values of each element in the returned byte array:")
-foreach wrkByte in byteArray
-writes(1,%string(wrkByte,'XXX')+" ("+^a(wrkByte)+")")
-end
+proc <br />
+  open(1,O,'TT:') <br />
+  oldString = "This is a test." <br />
+  writes(1,"Original String:") <br />
+  writes(1,%atrim(oldString)) <br />
+  writes(1,"") <br />
+  byteArray = ASCIIEncoding.GetBytes(oldString) <br />
+  writes(1,"Characters in original string: "+%string(byteArray.Length,'ZZX')) <br />
+  writes(1,"Values of each element in the returned byte array:") <br />
+  foreach wrkByte in byteArray <br />
+    writes(1,%string(wrkByte,'XXX')+" ("+^a(wrkByte)+")") <br />
+  end <br />
